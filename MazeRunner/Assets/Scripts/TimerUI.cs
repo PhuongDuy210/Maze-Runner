@@ -7,9 +7,11 @@ public class TimerUI : MonoBehaviour
 {
     public Text levelText;
     public Text timeLeft;
+    public Text highScore;
     public Text announcer;
     public TimeMaster gameMaster;
     private RotateToMouse rotateMouse;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +34,19 @@ public class TimerUI : MonoBehaviour
     {
         if (gameMaster == null)
         {
-            gameMaster = GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeMaster>();
+            gameMaster = FindObjectOfType<TimeMaster>();
         }
         else
+        {
+            if(player == null)
+                player = FindObjectOfType<Player>();
             levelText.text = "Score: " + gameMaster.level.ToString();
+            if(gameMaster.level > player.timeAttackHighScore)
+            {
+                player.timeAttackHighScore = gameMaster.level;
+            }
+            highScore.text = "Highscore: " + player.timeAttackHighScore.ToString();
+        }
         if (scene == SceneManager.GetSceneByName("TimeAttack"))
         {
             rotateMouse = FindObjectOfType<RotateToMouse>();
@@ -53,7 +64,7 @@ public class TimerUI : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            announcer.text = "Your score: " + gameMaster.level;
+            announcer.text = "Your score: " + gameMaster.level.ToString();
             rotateMouse.enabled = false;
             Time.timeScale = 0f;
         }

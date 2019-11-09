@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimeAttack.unity
     guid: c0968ae955d94ed4f908608ac1d00802
+  - enabled: 1
+    path: Assets/Scenes/InitVersusScene.unity
+    guid: f080f1d2ab95a68448769f2cb0672f67
   m_configObjects: {}
