@@ -38,8 +38,8 @@ public class TimerUI : MonoBehaviour
         }
         else
         {
-            if(player == null)
-                player = FindObjectOfType<Player>();
+            if (player == null)
+                player = Player.instance;
             levelText.text = "Score: " + gameMaster.level.ToString();
             if(gameMaster.level > player.timeAttackHighScore)
             {

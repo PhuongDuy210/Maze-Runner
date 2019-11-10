@@ -48,7 +48,7 @@ public class ClassicUI : MonoBehaviour
             breadthFirst.maze = FindObjectOfType<Maze>();
         }
         if (playerData == null)
-            playerData = FindObjectOfType<Player>();
+            playerData = Player.instance;
         optMoves = breadthFirst.BFS(breadthFirst.maze.tiles[breadthFirst.maze.startX, breadthFirst.maze.startY], breadthFirst.maze.tiles[breadthFirst.maze.endX, breadthFirst.maze.endY]).Count;
         announcer.text = "";
         level.text = "Level: " + gameMaster.level.ToString();

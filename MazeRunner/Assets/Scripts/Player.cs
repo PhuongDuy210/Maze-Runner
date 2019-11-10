@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
     public int classicHighScore;
     public int timeAttackHighScore;
 
+    public static Player instance;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this);
+        instance = this;
         LoadPlayer();
         SceneManager.sceneLoaded += MenuLoaded;
     }
