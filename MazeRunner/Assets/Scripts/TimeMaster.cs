@@ -35,6 +35,7 @@ public class TimeMaster : MonoBehaviour
     {
         if (scene == SceneManager.GetSceneByName("TimeAttack"))
         {
+            timer = 60f;
             maze = FindObjectOfType<Maze>();
             maze.TriggerMaze();
         }

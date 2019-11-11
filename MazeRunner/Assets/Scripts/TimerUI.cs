@@ -68,7 +68,7 @@ public class TimerUI : MonoBehaviour
             rotateMouse.enabled = false;
             Time.timeScale = 0f;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene(0);
         }
