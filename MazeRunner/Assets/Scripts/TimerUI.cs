@@ -64,6 +64,9 @@ public class TimerUI : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+        if (rotateMouse.enabled == true)
+        {
             announcer.text = "Your score: " + gameMaster.level.ToString();
             rotateMouse.enabled = false;
             Time.timeScale = 0f;
